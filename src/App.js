@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Nav from './components/Nav';
 import About from './components/About';
 import Gallery from './components/Gallery';
-
+// import CoolComponent from './components/CoolComponent'
 
 function App() {
   const [categories] = useState([
@@ -15,7 +15,7 @@ function App() {
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
   return (
-    <div>
+    <>
       <Nav 
       categories={categories}
       setCurrentCategory={setCurrentCategory}
@@ -25,7 +25,13 @@ function App() {
         <Gallery currentCategory={currentCategory}></Gallery>
         <About></About> 
       </main>
-    </div>
+      {/* <CoolComponent>
+        <p>Child 1</p>
+        <p>Child 2</p>
+        <h1>Child 2</h1>
+      </CoolComponent> */}
+      <>sssdf</>
+    </>
   );
 }
 
