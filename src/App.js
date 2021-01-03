@@ -15,24 +15,33 @@ function App() {
   ]);
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
+  const [contactSelected, setContactSelected] = useState(false);
+
   return (
     <>
       <Nav 
       categories={categories}
       setCurrentCategory={setCurrentCategory}
       currentCategory={currentCategory}
+      contactSelected={contactSelected}
+      setContactSelected={setContactSelected}
       ></Nav>
       <main>
-        <ContactForm></ContactForm>
-        <Gallery currentCategory={currentCategory}></Gallery>
-        <About></About> 
+        {!contactSelected ? ( //ternary operator
+          <>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            <About></About> 
+          </>
+        ) : (
+          <ContactForm></ContactForm> 
+
+        )}
       </main>
       {/* <CoolComponent>
         <p>Child 1</p>
         <p>Child 2</p>
         <h1>Child 2</h1>
       </CoolComponent> */}
-      <>sssdf</>
     </>
   );
 }

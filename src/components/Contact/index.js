@@ -49,16 +49,23 @@ function ContactForm() {
                 <form id='contact-form' onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor='name'>Name:</label>
-                        <input type='text' defaultValue={name} onChange={handleChange} name='name' />
+                        <input type='text' defaultValue={name} onBlur={handleChange} name='name' />
                     </div>
                     <div >
                         <label htmlFor='email'>Email:</label>
-                        <input type='email' defaultValue={email} onChange={handleChange} name='email' />
+                        <input type='email' defaultValue={email} onBlur={handleChange} name='email' />
                     </div>
                     <div>
                     <label>Message:</label>
-                    <textarea name='message' defaultValue={message} onChange={handleChange} rows='5' />
+                    <textarea name='message' defaultValue={message} onBlur={handleChange} rows='5' />
                     </div>
+                    {
+                        errorMessage && (
+                            <div>
+                                <p className='error-text'>{errorMessage}</p>
+                            </div>
+                        )
+                    }
                     <button type='submit'>Submit</button>
                 </form>
             </h1>
