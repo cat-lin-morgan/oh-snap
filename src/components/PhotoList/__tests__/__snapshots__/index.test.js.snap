@@ -2,10 +2,8 @@
 
 exports[`PhotoList is rendering it renders snapshot 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      class="flex-row"
-    />
-  </div>
+  <div
+    class="flex-row"
+  />
 </DocumentFragment>
 `;
